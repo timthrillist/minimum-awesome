@@ -3,6 +3,20 @@ minimum-awesome
 
 A Vim setup that will get you into Vim and make it so that you don't want to pull your hair out.
 
+Install
+=======
+
+git clone git@github.com:timthrillist/minimum-awesome.git
+cd minimum-awesome
+chmod a+x install.sh
+./install.sh
+
+The install is very simple. It renames your existing tmux.conf and vimrc files to *.bak, 
+then links to the new ones, installs Vim Bundler (vundle), and installs the Vundles I've added.
+
+Some of them might not be perfectly supported; I'm basically standing on the shoulders of the guys
+at Square with their Maximum Awesome repository (https://github.com/square/maximum-awesome) but most of it works great.
+
 vim
 ===
 
