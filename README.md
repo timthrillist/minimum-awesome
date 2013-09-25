@@ -2,6 +2,7 @@ minimum-awesome
 ===============
 
 A Vim setup that will get you into Vim and make it so that you don't want to pull your hair out.
+Based on Maximum Awesome by the guys over at Square. ( https://github.com/square/maximum-awesome )
 
 Install
 =======
