@@ -71,6 +71,7 @@ nmap <leader>n <plug>NERDTreeTabsToggle<CR>
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
+map <leader>r :NERDTreeFind<cr>
 
 " plugin settings
 let g:ctrlp_match_window = 'order:ttb,max:20'
