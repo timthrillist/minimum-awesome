@@ -7,8 +7,11 @@ Install
 =======
 
 git clone git@github.com:timthrillist/minimum-awesome.git
+
 cd minimum-awesome
+
 chmod a+x install.sh
+
 ./install.sh
 
 The install is very simple. It renames your existing tmux.conf and vimrc files to *.bak, 
