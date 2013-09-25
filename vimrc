@@ -69,8 +69,8 @@ nmap <leader>g :GitGutterToggle<CR>
 nmap <leader>c <Plug>Kwbd
 nmap <leader>n <plug>NERDTreeTabsToggle<CR>
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-vmap <C-x> :!pbcopy<CR>  
-vmap <C-c> :w !pbcopy<CR><CR> 
+vmap <C-x> :!pbcopy<CR>
+vmap <C-c> :w !pbcopy<CR><CR>
 
 " plugin settings
 let g:ctrlp_match_window = 'order:ttb,max:20'
@@ -102,6 +102,10 @@ autocmd User Rails silent! Rnavcommand stepdefinition features/step_definitions 
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
+" Set various file types to PHP (Drupal specific)
+au BufReadPost *.install set syntax=php
+au BufReadPost *.module set syntax=php
+
 " Fix Cursor in TMUX
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
@@ -124,3 +128,13 @@ if filereadable(expand("~/.vimrc.local"))
   " noremap! jj <ESC>
   source ~/.vimrc.local
 endif
+
+" Strip trailing whitespace on save
+fun! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfun
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
