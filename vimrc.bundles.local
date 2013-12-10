@@ -1,2 +1,2 @@
 Bundle 'jistr/vim-nerdtree-tabs'
-
+Bundle 'derekwyatt/vim-scala'
